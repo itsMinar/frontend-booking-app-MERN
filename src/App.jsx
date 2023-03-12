@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import { UserContextProvider } from './context/UserContext';
+import AccountPage from './pages/AccountPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -17,6 +18,10 @@ const App = () => {
                     <Route index element={<HomePage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/register" element={<RegisterPage />} />
+                    <Route
+                        path="/account/:subpage?"
+                        element={<AccountPage />}
+                    />
                 </Route>
             </Routes>
         </UserContextProvider>
